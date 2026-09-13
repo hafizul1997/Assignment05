@@ -1,6 +1,7 @@
 
 import type { Dispatch, SetStateAction } from "react";
 import type { ITechnologies } from "../Components/Type/Technology";
+import { toast } from "react-toastify";
 
 interface ITechnologyCardProps {
   technology: ITechnologies;
@@ -35,6 +36,7 @@ const TechnologyCard = ({
     }
 
     setCart((prev) => [...prev, technology]);
+     toast.success(`${technology.name} added to your stack!`);
   };
 
     return (
