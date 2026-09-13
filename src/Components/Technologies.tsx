@@ -1,17 +1,19 @@
-import React, { use } from 'react';
-import type { Dispatch, SetStateAction } from "react";
-import type { ITechnologies } from "./Type/Technology";
-import { toast } from "react-toastify";
+import { use } from "react";
 import TechnologyCard from "./TechnologyCard";
-export interface ITechnologiesProps{
-   technology: ITechnologies;
+import type { Dispatch, SetStateAction } from "react";
+import type { ITechnologies } from "../Components/Type/Technology";
+import { toast } from "react-toastify";
+interface ITechnologiesProps {
+  technologyPromise: Promise<ITechnologies[]>;
   cart: ITechnologies[];
   setCart: Dispatch<SetStateAction<ITechnologies[]>>;
 }
-const Technologies=({technologyPromise,cart,setCart}:ITechnologiesProps) => {
-    console.log(technologyPromise);
-  const technologies= use(technologyPromise);
- console.log(technologies);
+const Technologies = ({
+  technologyPromise,
+  cart,
+  setCart,
+}: ITechnologiesProps) => {
+  const technologies = use(technologyPromise);
     return (
     <div className='max-w-[1280px] mx-auto mb-20'> 
            <h1 className='text-5xl font-extrabold'>Explore The <span className='bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent'> Technologies </span></h1>
