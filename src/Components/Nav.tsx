@@ -7,11 +7,15 @@ const Nav = () => {
         setButtonType(type);
     }
     return (
-      
-            <nav className='sticky top-0 z-50  bg-white shadow-md'>
+        
+            <nav className='sticky top-0 z-50  bg-white  max-w-[1280px] mx-auto'>
+                  
+                <button className="text-2xl lg:hidden">
+                 ☰
+    </button>
                 <div className='mx-auto max-w-[1280px] items-center flex justify-between  h-[80px] '>
                 <img src={Logo} alt="Dev Stack Logo" className='h-[32px] w-[137px]' />
-                <ul className=' flex  justify-between gap-4 text-[#475569]  font-bold'>
+                <ul className='text-[#475569] hidden  justify-between gap-8  lg:flex '>
                   <ul className="flex gap-4 text-[#475569]">
                          <li className="text-[#d91b7e]">Home</li>
                         <li className="hover:text-[#d91b7e]">Technologies</li>
@@ -21,11 +25,12 @@ const Nav = () => {
                   </ul>
                 </ul>
                 <div className='flex  justify-between gap-2'>
-    <button onClick={()=>activeHandleButton("Sign In")} className={`px-4 py-2 ${(buttonType === "Sign In")? "btn btn-secondary" : ""} rounded-full`}>Sign In</button>
-   <button onClick={()=> activeHandleButton("Sign Up")} className={`px-4 py-2 ${(buttonType ==="Sign Up")? "btn btn-secondary" : ""} rounded-full`}>Sign Up</button>
+    <button onClick={()=>activeHandleButton("Sign In")} className={`px-4 py-2 text-sm ${(buttonType === "Sign In")? "btn btn-secondary" : ""} rounded-full`}>Sign In</button>
+   <button onClick={()=> activeHandleButton("Sign Up")} className={`px-4 py-2  text-sm ${(buttonType ==="Sign Up")? "btn btn-secondary" : ""} rounded-full`}>Sign Up</button>
                 </div>
             </div>
     </nav>
+ 
     );
 };
 

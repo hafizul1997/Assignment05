@@ -61,7 +61,7 @@ const TechnologyCard = ({
 
     <div className="card-actions justify-center mt-3">
       <button onClick={handleSelectedButton} className={`btn ${
-    isSelected ? "bg-pink-400 text-pink-800" : "bg-black"} w-[250px] text-white`} disabled={isSelected}>   {isSelected ?  "✓ Added to Stack" : "Add to Stack" }</button>
+    isSelected ? "bg-pink-400 text-pink-800" : "bg-black text-white"} w-[250px] text-white`} disabled={isSelected}>   {isSelected ?  "✓ Added to Stack" : "Add to Stack" }</button>
     </div>
   </div>
 </div>
