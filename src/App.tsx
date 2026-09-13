@@ -4,8 +4,7 @@ import Hero from './Components/Hero'
 import Footer from './Components/Footer'
 import Technologies from './Components/Technologies'
 import type { ITechnologies } from './Components/Type/Technology'
-import { Suspense } from 'react'
-import { HiH1, HiH2 } from 'react-icons/hi2'
+import { Suspense, useState } from 'react'
 const dataFetch = async():Promise<ITechnologies[]>=>{
         const res=await fetch('/data.json');
         const data=await res.json();
@@ -14,13 +13,18 @@ const dataFetch = async():Promise<ITechnologies[]>=>{
   const technologyPromise=dataFetch();
 
 function App() {
+  const[cart,setCart]=useState<ITechnologies[]>([]);
   return (
     <>
     {/*Navbar*/}
     <Nav></Nav>
     <Hero></Hero>
-    <Suspense fallback={<h1>Loading...</h1>}>
-    <Technologies technologyPromise={technologyPromise} />
+    <Suspense fallback={
+       <div className="flex justify-center py-20">
+      <div className="loading loading-dots loading-lg"></div>
+    </div>
+    }>
+    <Technologies technologyPromise={technologyPromise} cart={cart} setCart={setCart}/>
     </Suspense>
     <Footer></Footer>
      {/*Hero Section*/}

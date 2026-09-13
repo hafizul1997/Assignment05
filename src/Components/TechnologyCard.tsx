@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { useState } from "react";
 import type { ITechnologies } from './Type/Technology';
+import { toast } from 'react-toastify';
 const badgeStyles: Record<string, string> = {
   Popular: "bg-orange-100 text-orange-600",
   "Top SQL": "bg-blue-100 text-blue-600",
@@ -11,11 +12,24 @@ const badgeStyles: Record<string, string> = {
   "Top Rated": "bg-yellow-100 text-yellow-700",
   DevOps: "bg-cyan-100 text-cyan-600",
 };
-const TechnologyCard = ({technology}:{technology:ITechnologies}) => {
-    const[isSelected,setIsSelected]=useState(false);
-    const handleSelectedButton=()=>{
-        setIsSelected(true);
-    }
+interface ITechnologyCardProps{
+    technology:ITechnologies;
+     cart:ITechnologies[];
+    setCart:Dispatch<SetStateAction<ITechnologies[]>>
+}
+
+const TechnologyCard = ({technology,cart,setCart}:ITechnologyCardProps) => {
+    const isSelected = cart.some(
+    (item) => item.id === technology.id
+  );
+
+  const handleSelectedButton = () => {
+    
+    setCart((prev) => [...prev, technology]);
+
+    toast.success(`${technology.name} is added Successfully`);
+  };
+
     return (
         <div>
              <div className="card bg-base-100 w-[288px] shadow-sm">
