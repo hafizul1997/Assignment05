@@ -32,7 +32,7 @@ const TechnologyCard = ({technology,cart,setCart}:ITechnologyCardProps) => {
 
     return (
         <div>
-             <div className="card bg-base-100 w-[288px] shadow-sm">
+             <div className={`card w-[288px] bg-base-100 shadow-sm border-2 ${isSelected ? "border-pink-500": "border-transparent"}`}>
           <div className='flex justify-between p-4'>
     <img src={technology.icon} alt="" className='w-[30px] h-[30px]' />
     <div className={`badge ${badgeStyles[technology.badge]}`}>
@@ -52,7 +52,7 @@ const TechnologyCard = ({technology,cart,setCart}:ITechnologyCardProps) => {
 
     <div className="card-actions justify-center mt-3">
       <button onClick={handleSelectedButton} className={`btn ${
-    isSelected ? "bg-gray-400" : "bg-black"} w-[250px] text-white`} disabled={isSelected}>   {isSelected ?  "✓ Added to Stack" : "Add to Stack" }</button>
+    isSelected ? "bg-pink-400 text-pink-800" : "bg-black"} w-[250px] text-white`} disabled={isSelected}>   {isSelected ?  "✓ Added to Stack" : "Add to Stack" }</button>
     </div>
   </div>
 </div>
