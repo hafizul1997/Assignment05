@@ -17,11 +17,11 @@ const Nav = () => {
                 <img src={Logo} alt="Dev Stack Logo" className='h-[32px] w-[137px]' />
                 <ul className='text-[#475569] hidden  justify-between gap-8  lg:flex '>
                   <ul className="flex gap-4 text-[#475569]">
-                         <li className="text-[#d91b7e]">Home</li>
-                        <li className="hover:text-[#d91b7e]">Technologies</li>
-                        <li className="hover:text-[#d91b7e]">Projects</li>
-                        <li className="hover:text-[#d91b7e]">About</li>
-                        <li className="hover:text-[#d91b7e]">Contact</li>
+                         <li className="text-[#d91b7e]"> <a href="#">Home </a></li>
+                        <li className="hover:text-[#d91b7e]"><a href="#">Technologies</a></li>
+                        <li className="hover:text-[#d91b7e]"><a href="#">Projects</a></li>
+                        <li className="hover:text-[#d91b7e]"><a href="#">About</a></li>
+                        <li className="hover:text-[#d91b7e]"><a href="#">Contact</a></li>
                   </ul>
                 </ul>
                 <div className='flex  justify-between gap-2'>
