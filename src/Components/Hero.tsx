@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import HeroImage from '../assets/banner-stack.png'
 const Hero = () => {
     const [herobtn,setHeroBtn]=useState('Explore Technologies');

@@ -1,12 +1,12 @@
-
-import { use, type Dispatch, type SetStateAction } from 'react';
-import type { ITechnologies } from './Type/Technology';
-import TechnologyCard from './TechnologyCard';
+import React, { use } from 'react';
+import type { Dispatch, SetStateAction } from "react";
+import type { ITechnologies } from "./Type/Technology";
 import { toast } from "react-toastify";
+import TechnologyCard from "./TechnologyCard";
 export interface ITechnologiesProps{
-    technologyPromise:Promise<ITechnologies[]>;
-    cart:ITechnologies[];
-    setCart:React.Dispatch<React.SetStateAction<ITechnologies[]>>
+   technology: ITechnologies;
+  cart: ITechnologies[];
+  setCart: Dispatch<SetStateAction<ITechnologies[]>>;
 }
 const Technologies=({technologyPromise,cart,setCart}:ITechnologiesProps) => {
     console.log(technologyPromise);
@@ -20,7 +20,11 @@ const Technologies=({technologyPromise,cart,setCart}:ITechnologiesProps) => {
         <div className='col-span-9'>
             <div className='grid grid-cols-3 gap-5 '>  
            {technologies.map((technology: ITechnologies) => (
-  <TechnologyCard key={technology.id} technology={technology} cart={cart} setCart={setCart}> </TechnologyCard>))}
+  <TechnologyCard 
+  key={technology.id}
+   technology={technology}
+    cart={cart}
+     setCart={setCart}></TechnologyCard>))}
           </div>  
     </div>
         <div className='col-span-3'>
