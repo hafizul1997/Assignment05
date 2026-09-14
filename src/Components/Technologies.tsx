@@ -15,12 +15,16 @@ const Technologies = ({
 }: ITechnologiesProps) => {
   const technologies = use(technologyPromise);
     return (
-    <div className='max-w-[1280px] mx-auto mb-20'> 
-           <h1 className='text-5xl font-extrabold'>Explore The <span className='bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent'> Technologies </span></h1>
+   <div className='max-w-[1280px] mx-auto mb-20'> 
+           <h1 className='text-2xl md:text-3xl lg:text-5xl font-extrabold'>Explore The <span className='bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent'> Technologies </span></h1>
            <p className='text-[#64748B] mb-15 mt-4'>Pick one technology per category to build your ideal stack </p>
-       <div className='grid grid-cols-12 gap-4'>
-        <div className='col-span-9'>
-            <div className='grid grid-cols-3 gap-5 '>  
+
+  <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-12 gap-6">
+
+    {/* Technologies */}
+    <div className="w-full md:col-span-2 lg:col-span-9">
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
            {technologies.map((technology: ITechnologies) => (
   <TechnologyCard 
   key={technology.id}
@@ -29,7 +33,7 @@ const Technologies = ({
      setCart={setCart}></TechnologyCard>))}
           </div>  
     </div>
-        <div className='col-span-3'>
+       <div className="w-full md:col-span-1 lg:col-span-3">
           <div className="sticky top-[100px] rounded-2xl border border-slate-200 bg-base-100 shadow-sm  bg-white p-5">
             {/* Heading + Count */} 
             <div> 

@@ -41,7 +41,7 @@ const TechnologyCard = ({
 
     return (
         <div>
-             <div className={`card w-[288px] bg-base-100 shadow-sm border-2 ${isSelected ? "border-pink-500": "border-transparent"}`}>
+             <div className={`card w-full min-w-0 max-w-full bg-base-100 shadow-sm border-2 ${isSelected ? "border-pink-500": "border-transparent"}`}>
           <div className='flex justify-between p-4'>
     <img src={technology.icon} alt="" className='w-[30px] h-[30px]' />
     <div className={`badge ${badgeStyles[technology.badge]}`}>
@@ -61,7 +61,7 @@ const TechnologyCard = ({
 
     <div className="card-actions justify-center mt-3">
       <button onClick={handleSelectedButton} className={`btn ${
-    isSelected ? "bg-pink-400 text-pink-800" : "bg-black text-white"} w-[250px] text-white`} disabled={isSelected}>   {isSelected ?  "✓ Added to Stack" : "Add to Stack" }</button>
+    isSelected ? "bg-pink-400 text-pink-800" : "bg-black text-white"} w-full text-white`} disabled={isSelected}>   {isSelected ?  "✓ Added to Stack" : "Add to Stack" }</button>
     </div>
   </div>
 </div>
